@@ -49,7 +49,11 @@ public class ZetTable
    */
   public ZetTable()
   {
-    ...
+  	deck = new Deck();
+    ZetCard table[] = new ZetCard[dfltOpenCards];
+    for (int i = 0; i < dfltOpenCards; i++) {
+    	table[i] = deck.takeTop();
+    }
   }
 
   /**
@@ -58,7 +62,7 @@ public class ZetTable
    */
   public int cardsInDeck()
   {
-    ...
+    return deck.getNumCards();
   }
 
   /**
@@ -69,7 +73,7 @@ public class ZetTable
    */
   public ZetCard getOpenCard(int i)
   {
-    ...
+    return table[i];
   }
 
   /**
@@ -78,7 +82,7 @@ public class ZetTable
    */
   public boolean enoughOpen()
   {
-    ...
+    return numOpenCards>=dfltOpenCards;
   }
 
   /**
