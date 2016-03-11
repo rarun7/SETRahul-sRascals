@@ -92,30 +92,34 @@ public class ZetTable
    */
   public int[] findZet()
   {
-    int indices[] = new int[];
+    int indices[] = new int[3];
     for (int i = 0; i < table.length(); i++) {
     	for (int j = i+1; j < table.length(); j++) {
     		for (int k = j+1; k < table.length(); k++) {
-
+    			if (isSet(table[i],table[j],table[k]))
+    				indicies[0] = i;
+    				indicies[1] = j;
+    				indicies[2] = k;
     		}
     	}
     }
+    return indicies;
   }
   boolean isSet(Card a, Card b, Card c) {
-        if (!((a.number == b.number) && (b.number == c.number) ||
-                (a.number != b.number) && (a.number != c.number) && (b.number != c.number))) {
+        if (!((a.getNumber() == b.getNumber()) && (b.getNumber() == c.getNumber()) ||
+                (a.getNumber() != b.getNumber()) && (a.getNumber() != c.getNumber()) && (b.getNumber() != c.getNumber()))) {
             return false;
         }
         if (!((a.symbol == b.symbol) && (b.symbol == c.symbol) ||
                 (a.symbol != b.symbol) && (a.symbol != c.symbol) && (b.symbol != c.symbol))) {
             return false;
         }
-        if (!((a.shading == b.shading) && (b.shading == c.shading) ||
-                (a.shading != b.shading) && (a.shading != c.shading) && (b.shading != c.shading))) {
+        if (!((a.getFill() == b.getFill()) && (b.getFill() == c.getFill()) ||
+                (a.getFill() != b.getFill()) && (a.getFill() != c.getFill()) && (b.getFill() != c.getFill()))) {
             return false;
         }
-        if (!((a.colour == b.colour) && (b.colour == c.colour) ||
-                (a.colour != b.colour) && (a.colour != c.colour) && (b.colour != c.colour))) {
+        if (!((a.getColor() == b.getColor()) && (b.getColor() == c.getColor()) ||
+                (a.getColor() != b.getColor()) && (a.getColor() != c.getColor()) && (b.getColor() != c.getColor()))) {
             return false;
         }
         return true;
