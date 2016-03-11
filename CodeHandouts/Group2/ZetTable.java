@@ -92,8 +92,34 @@ public class ZetTable
    */
   public int[] findZet()
   {
-    ...
+    int indices[] = new int[];
+    for (int i = 0; i < table.length(); i++) {
+    	for (int j = i+1; j < table.length(); j++) {
+    		for (int k = j+1; k < table.length(); k++) {
+
+    		}
+    	}
+    }
   }
+  boolean isSet(Card a, Card b, Card c) {
+        if (!((a.number == b.number) && (b.number == c.number) ||
+                (a.number != b.number) && (a.number != c.number) && (b.number != c.number))) {
+            return false;
+        }
+        if (!((a.symbol == b.symbol) && (b.symbol == c.symbol) ||
+                (a.symbol != b.symbol) && (a.symbol != c.symbol) && (b.symbol != c.symbol))) {
+            return false;
+        }
+        if (!((a.shading == b.shading) && (b.shading == c.shading) ||
+                (a.shading != b.shading) && (a.shading != c.shading) && (b.shading != c.shading))) {
+            return false;
+        }
+        if (!((a.colour == b.colour) && (b.colour == c.colour) ||
+                (a.colour != b.colour) && (a.colour != c.colour) && (b.colour != c.colour))) {
+            return false;
+        }
+        return true;
+    }
 
   /**
    *  Opens three cards from the deck if three cards are available in the deck.
