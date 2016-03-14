@@ -150,11 +150,11 @@ public class ZetTable
  */
 public void remove3Cards(int[] indices)
 {
-for(int i=0;i<indicies.length();i++)
-{
-table[indicies[i]]=null;
-}
-compactOpenCards();
+	for(int i=0;i<indicies.length();i++)
+	{
+		table[indicies[i]]=null;
+	}
+	compactOpenCards();
 
 }
 
@@ -176,6 +176,10 @@ public void compactOpenCards()
  */
 public String toString()
 {
-...
+	String str;
+	for (Card i:table) {
+		str+=i+"\n";
+	}
+	return str + cardsInDeck;
 }
 }
