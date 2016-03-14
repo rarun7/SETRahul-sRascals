@@ -42,17 +42,17 @@
 public class ZetTable
 {
   private final int dfltOpenCards = 12;
-  ...
+  Deck deck = new Deck();
 
   /**
    *  Creates a new deck and opens dfltOpenCards cards.
    */
   public ZetTable()
   {
-  	deck = new Deck();
-    ZetCard table[] = new ZetCard[dfltOpenCards];
-    for (int i = 0; i < dfltOpenCards; i++) {
-    	table[i] = deck.takeTop();
+    ZetCard table[] = new ZetCard[21];
+    for (int i = 0; i < ZetCard.length(); i++) {
+    	if (i < dfltOpenCards)
+    		table[i] = deck.takeTop();
     }
   }
 
@@ -140,7 +140,7 @@ public class ZetTable
    */
   public void remove3Cards(int[] indices)
   {
-    ...
+    
   }
 
   /**
