@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ZetAnalyzer()
+comment1.params=card1\ card2\ card3
+comment1.target=boolean\ isZet(ZetCard,\ ZetCard,\ ZetCard)
+comment2.params=cards
+comment2.target=int[]\ findZet(ZetCard[])
+numComments=3
